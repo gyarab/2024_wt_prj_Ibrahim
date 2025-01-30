@@ -13,6 +13,6 @@ Hlavní menu obsahuje odkaz na homepage (seznam míčů) a ukazuje několik bě�
 
 ## Wireframes
 ![wireframe](./Wireframe.png)
-##class diagram
-![class diagram](./
+## class diagram
+![class diagram](./Class diagram.png)
 
