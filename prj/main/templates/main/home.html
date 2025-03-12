@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+
+{% block title %}Seznam volejbalových míčů{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">Seznam volejbalových míčů</h1>
+
+    <div class="row">
+        {% for mic in mice %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ mic.image_url }}" class="card-img-top" alt="{{ mic.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ mic.name }}</h5>
+                    <p class="card-text"><strong>Značka:</strong> {{ mic.brand }}</p>
+                    <p class="card-text"><strong>Cena:</strong> {{ mic.price }} Kč</p>
+                    <a href="{% url 'mic_detail' mic.id %}" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">Žádné míče k dispozici.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

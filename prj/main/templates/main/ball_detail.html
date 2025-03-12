@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+
+{% block title %}Detail míče{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ mic.name }}</h1>
+        <img src="{{ mic.image_url }}" class="img-fluid" alt="{{ mic.name }}">
+        <p><strong>Značka:</strong> {{ mic.brand }}</p>
+        <p><strong>Cena:</strong> {{ mic.price }} Kč</p>
+        <p><strong>Hmotnost:</strong> {{ mic.weight }} g</p>
+        <p><strong>Materiál:</strong> {{ mic.material }}</p>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Zpět</a>
+    </div>
+{% endblock %}
