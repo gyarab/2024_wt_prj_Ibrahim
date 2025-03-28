@@ -1,9 +1,14 @@
 from django.contrib import admin
-from .models import Ball
-admin.site.register(Ball)
+from .models import Ball, customer
 
 class BallAdmin(admin.ModelAdmin):
-    list_display = {"id","name","price","hmotnost"}
+    list_display = ('id', 'name', 'price', 'weight', 'purpose', 'brand')  # Fields to display in the admin list view
 
-    admin.site.register(id,name)
-# Register your models here.
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('customer_email', 'username')  # Fields to display in the admin list view
+
+# Register the Ball model with the custom BallAdmin class
+admin.site.register(Ball, BallAdmin)
+
+# Register the Customer model with the custom CustomerAdmin class
+admin.site.register(customer, CustomerAdmin)
