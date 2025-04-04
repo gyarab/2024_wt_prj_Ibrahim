@@ -1,0 +1,399 @@
+- model: main.ball
+  pk: 1
+  fields:
+    name: 'Mikasa MVA200'
+    price: 1800
+    weight: 260
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Mikasa'
+
+- model: main.ball
+  pk: 2
+  fields:
+    name: 'Wilson AVP Beach Volleyball'
+    price: 900  
+    weight: 230
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Wilson'
+
+- model: main.ball
+  pk: 3
+  fields:
+    name: 'Molten V5M5000'
+    price: 1300  
+    weight: 270
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Molten'
+
+- model: main.ball
+  pk: 4
+  fields:
+    name: 'Spalding King of the Beach Volleyball'
+    price: 1100 
+    weight: 240
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Spalding'
+
+- model: main.ball
+  pk: 5
+  fields:
+    name: 'Tachikara SV5W Gold'
+    price: 1400  
+    weight: 280
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Tachikara'
+
+- model: main.ball
+  pk: 6
+  fields:
+    name: 'Nike Vapor Volleyball'
+    price: 1300
+    weight: 260
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Nike'
+
+- model: main.ball
+  pk: 7
+  fields:
+    name: 'Adidas CourtVolley'
+    price: 1200
+    weight: 270
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Adidas'
+
+- model: main.ball
+  pk: 8
+  fields:
+    name: 'Molten V5M4000'
+    price: 1000
+    weight: 265
+    diameter: 21
+    purpose: 'Training'
+    brand: 'Molten'
+
+- model: main.ball
+  pk: 9
+  fields:
+    name: 'Mikasa V200W'
+    price: 1500
+    weight: 275
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Mikasa'
+
+- model: main.ball
+  pk: 10
+  fields:
+    name: 'Wilson Official AVP'
+    price: 1100
+    weight: 240
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Wilson'
+
+- model: main.ball
+  pk: 11
+  fields:
+    name: 'Molten Super Touch'
+    price: 1350
+    weight: 280
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Molten'
+
+- model: main.ball
+  pk: 12
+  fields:
+    name: 'Spalding Xperience Volleyball'
+    price: 950
+    weight: 265
+    diameter: 22
+    purpose: 'Indoor'
+    brand: 'Spalding'
+
+- model: main.ball
+  pk: 13
+  fields:
+    name: 'Tachikara Sensi-Tec'
+    price: 1250
+    weight: 260
+    diameter: 21
+    purpose: 'Training'
+    brand: 'Tachikara'
+
+- model: main.ball
+  pk: 14
+  fields:
+    name: 'Under Armour Beach Volleyball'
+    price: 800
+    weight: 230
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Under Armour'
+
+- model: main.ball
+  pk: 15
+  fields:
+    name: 'Mikasa MVA300'
+    price: 1900
+    weight: 290
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Mikasa'
+
+- model: main.ball
+  pk: 16
+  fields:
+    name: 'Wilson AVP Official'
+    price: 1400
+    weight: 240
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Wilson'
+
+- model: main.ball
+  pk: 17
+  fields:
+    name: 'Molten Flistatec'
+    price: 1500
+    weight: 270
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Molten'
+
+- model: main.ball
+  pk: 18
+  fields:
+    name: 'Spalding King of the Beach'
+    price: 1100
+    weight: 240
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Spalding'
+
+- model: main.ball
+  pk: 19
+  fields:
+    name: 'Nike Hypercourt Volleyball'
+    price: 1150
+    weight: 255
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Nike'
+
+- model: main.ball
+  pk: 20
+  fields:
+    name: 'Adidas Volleyball'
+    price: 1000
+    weight: 250
+    diameter: 22
+    purpose: 'Training'
+    brand: 'Adidas'
+
+- model: main.ball
+  pk: 21
+  fields:
+    name: 'Molten V5M5000 Indoor'
+    price: 1400
+    weight: 275
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Molten'
+
+- model: main.ball
+  pk: 22
+  fields:
+    name: 'Mikasa VS200W'
+    price: 1700
+    weight: 280
+    diameter: 21
+    purpose: 'Competition'
+    brand: 'Mikasa'
+
+- model: main.ball
+  pk: 23
+  fields:
+    name: 'Spalding X-series'
+    price: 1250
+    weight: 270
+    diameter: 21
+    purpose: 'Training'
+    brand: 'Spalding'
+
+- model: main.ball
+  pk: 24
+  fields:
+    name: 'Wilson Pro Beach'
+    price: 950
+    weight: 240
+    diameter: 22
+    purpose: 'Beach'
+    brand: 'Wilson'
+
+- model: main.ball
+  pk: 25
+  fields:
+    name: 'Adidas Court'
+    price: 1200
+    weight: 250
+    diameter: 21
+    purpose: 'Indoor'
+    brand: 'Adidas'
+
+- model: main.customer
+  pk: 1
+  fields:
+    customer_email: 'john.doe@example.com'
+    username: 'john_doe'
+
+- model: main.customer
+  pk: 2
+  fields:
+    customer_email: 'jane.smith@example.com'
+    username: 'jane_smith'
+
+- model: main.customer
+  pk: 3
+  fields:
+    customer_email: 'mike.jones@example.com'
+    username: 'mike_jones'
+
+- model: main.customer
+  pk: 4
+  fields:
+    customer_email: 'lucy.green@example.com'
+    username: 'lucy_green'
+
+- model: main.customer
+  pk: 5
+  fields:
+    customer_email: 'tom.brown@example.com'
+    username: 'tom_brown'
+
+- model: main.customer
+  pk: 6
+  fields:
+    customer_email: 'susan.white@example.com'
+    username: 'susan_white'
+
+- model: main.customer
+  pk: 7
+  fields:
+    customer_email: 'george.davis@example.com'
+    username: 'george_davis'
+
+- model: main.customer
+  pk: 8
+  fields:
+    customer_email: 'paul.martin@example.com'
+    username: 'paul_martin'
+
+- model: main.customer
+  pk: 9
+  fields:
+    customer_email: 'lisa.wilson@example.com'
+    username: 'lisa_wilson'
+
+- model: main.customer
+  pk: 10
+  fields:
+    customer_email: 'maria.clark@example.com'
+    username: 'maria_clark'
+
+- model: main.purchase
+  pk: 1
+  fields:
+    customer: 1
+    ball: 1
+    purchase_date: '2025-03-01'
+    quantity: 2
+    total_price: 2600
+
+- model: main.purchase
+  pk: 2
+  fields:
+    customer: 2
+    ball: 2
+    purchase_date: '2025-03-02'
+    quantity: 1
+    total_price: 1200
+
+- model: main.purchase
+  pk: 3
+  fields:
+    customer: 3
+    ball: 3
+    purchase_date: '2025-03-03'
+    quantity: 3
+    total_price: 3000
+
+- model: main.purchase
+  pk: 4
+  fields:
+    customer: 4
+    ball: 4
+    purchase_date: '2025-03-04'
+    quantity: 1
+    total_price: 2200
+
+- model: main.purchase
+  pk: 5
+  fields:
+    customer: 5
+    ball: 5
+    purchase_date: '2025-03-05'
+    quantity: 2
+    total_price: 1800
+
+- model: main.purchase
+  pk: 6
+  fields:
+    customer: 6
+    ball: 6
+    purchase_date: '2025-03-06'
+    quantity: 4
+    total_price: 5200
+
+- model: main.purchase
+  pk: 7
+  fields:
+    customer: 7
+    ball: 7
+    purchase_date: '2025-03-07'
+    quantity: 1
+    total_price: 1200
+
+- model: main.purchase
+  pk: 8
+  fields:
+    customer: 8
+    ball: 8
+    purchase_date: '2025-03-08'
+    quantity: 3
+    total_price: 3750
+
+- model: main.purchase
+  pk: 9
+  fields:
+    customer: 9
+    ball: 9
+    purchase_date: '2025-03-09'
+    quantity: 2
+    total_price: 2300
+
+- model: main.purchase
+  pk: 10
+  fields:
+    customer: 10
+    ball: 10
+    purchase_date: '2025-03-10'
+    quantity: 1
+    total_price: 950
