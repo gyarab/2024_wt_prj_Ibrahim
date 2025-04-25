@@ -3,13 +3,12 @@
 {% block title %}Detail míče{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{ mic.name }}</h1>
-        <img src="{{ mic.image_url }}" class="img-fluid" alt="{{ mic.name }}">
-        <p><strong>Značka:</strong> {{ mic.brand }}</p>
-        <p><strong>Cena:</strong> {{ mic.price }} Kč</p>
-        <p><strong>Hmotnost:</strong> {{ mic.weight }} g</p>
-        <p><strong>Materiál:</strong> {{ mic.material }}</p>
-        <a href="{% url 'home' %}" class="btn btn-secondary">Zpět</a>
-    </div>
+<h1>{{ ball.name }}</h1>
+<p>Cena: {{ ball.price }} Kč</p>
+<p>Hmotnost: {{ ball.weight }} g</p>
+<p>Průměr: {{ ball.diameter }} mm</p>
+<p>Využití: {{ ball.purpose }}</p>
+<p>Značka: {{ ball.brand }}</p>
+<a href="{% url 'ball_list' %}">Zpět na seznam</a>
+
 {% endblock %}

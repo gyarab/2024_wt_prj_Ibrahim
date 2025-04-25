@@ -1,8 +1,18 @@
 from django.shortcuts import render
-#from .models import Mic
+from .models import Ball
+from django.shortcuts import render, get_object_or_404
+from .models import Ball
 
-#def mic_list(request):
-  # for mic in mice:
-       # mic.image_url = f'{mic.name.lower()}.jpg' # URL obrázku
-    #return render(request, 'mic_list.html', {'mice': mice})
-# Create your views here.
+
+
+def ball_list(request):
+    balls = Ball.objects.all().order_by('name')  # Order balls by name alphabetically
+    return render(request, 'main/ball_list.html', {'balls': balls})
+
+
+
+
+def ball_detail(request, pk):
+    ball = get_object_or_404(Ball, pk=pk)
+    return render(request, 'main/ball_detail.html', {'ball': ball})
+

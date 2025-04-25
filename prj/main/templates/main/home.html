@@ -1,21 +1,28 @@
 {% extends "main/base.html" %}
 
-{% block title %}Seznam volejbalových míčů{% endblock %}
+{% block title %}Můj E-shop{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 class="text-center my-4">Seznam volejbalových míčů</h1>
+<!-- Hero Section -->
+<div class="hero-section text-white text-center py-5" style="background-color: #f39c12; border-bottom: 5px solid #e67e22;">
+    <h1 class="display-4">Vítejte na našem e-shopu!</h1>
+    <p class="lead">Prohlédněte si naši nabídku kvalitních volejbalových míčů. Najděte ten pravý pro vás!</p>
+    <a href="{% url 'ball_list' %}" class="btn btn-dark btn-lg mt-3">Prozkoumat nabídku</a>
+</div>
 
+<!-- Product Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Naše nejnovější míče</h2>
     <div class="row">
         {% for mic in mice %}
         <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card shadow-sm">
                 <img src="{{ mic.image_url }}" class="card-img-top" alt="{{ mic.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ mic.name }}</h5>
                     <p class="card-text"><strong>Značka:</strong> {{ mic.brand }}</p>
                     <p class="card-text"><strong>Cena:</strong> {{ mic.price }} Kč</p>
-                    <a href="{% url 'mic_detail' mic.id %}" class="btn btn-primary">Detail</a>
+                    <a href="{% url 'mic_detail' mic.id %}" class="btn btn-primary">Zobrazit detail</a>
                 </div>
             </div>
         </div>
@@ -23,5 +30,10 @@
         <p class="text-center">Žádné míče k dispozici.</p>
         {% endfor %}
     </div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer-section py-4 text-white text-center" style="background-color: #343a40;">
+    <p>&copy; 2025 Můj E-shop - Všechna práva vyhrazena</p>
 </div>
 {% endblock %}

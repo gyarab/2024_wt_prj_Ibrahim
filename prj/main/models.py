@@ -7,6 +7,8 @@ class Ball(models.Model):
     diameter = models.IntegerField(default=0)
     purpose = models.CharField(max_length=70)
     brand = models.CharField(max_length=70)
+   # image = models.ImageField(upload_to='balls/', null=True, blank=True)  # Přidání pole pro obrázek
+
 
     def __str__(self):
         return f"{self.name}"

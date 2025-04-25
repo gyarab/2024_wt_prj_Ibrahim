@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block title %}Seznam volejbalových míčů{% endblock %}
+
+{% block content %}
+<!-- Přidáme hlavní nadpis stránky -->
+<h1 class="text-center my-4">Seznam volejbalových míčů</h1>
+
+<!-- Začneme mřížku pro zobrazení míčů -->
+<div class="container">
+  <div class="row">
+    {% for ball in balls %}
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          {% if ball.image %}
+            <img src="{{ ball.image.url }}" class="card-img-top" alt="{{ ball.name }}">
+          {% else %}
+            <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No Image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ ball.name }}</h5>
+            <p class="card-text">Cena: {{ ball.price }} Kč</p>
+            <p class="card-text">Značka: {{ ball.brand }}</p>
+            <a href="{% url 'ball_detail' ball.pk %}" class="btn btn-primary">Detail</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
