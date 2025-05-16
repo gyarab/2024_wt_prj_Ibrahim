@@ -250,65 +250,169 @@
     purpose: 'Indoor'
     brand: 'Adidas'
 
+# Users (auth_user table)
+- model: auth.user
+  pk: 1
+  fields:
+    username: 'john_doe'
+    email: 'john.doe@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword1'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 2
+  fields:
+    username: 'jane_smith'
+    email: 'jane.smith@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword2'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 3
+  fields:
+    username: 'mike_jones'
+    email: 'mike.jones@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword3'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 4
+  fields:
+    username: 'lucy_green'
+    email: 'lucy.green@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword4'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 5
+  fields:
+    username: 'tom_brown'
+    email: 'tom.brown@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword5'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 6
+  fields:
+    username: 'susan_white'
+    email: 'susan.white@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword6'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 7
+  fields:
+    username: 'george_davis'
+    email: 'george.davis@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword7'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 8
+  fields:
+    username: 'paul_martin'
+    email: 'paul.martin@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword8'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 9
+  fields:
+    username: 'lisa_wilson'
+    email: 'lisa.wilson@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword9'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+- model: auth.user
+  pk: 10
+  fields:
+    username: 'maria_clark'
+    email: 'maria.clark@example.com'
+    password: 'pbkdf2_sha256$260000$hashedpassword10'  # Replace with hashed password
+    is_superuser: false
+    is_staff: false
+    is_active: true
+
+# Customers (main_customer table)
 - model: main.customer
   pk: 1
   fields:
-    customer_email: 'john.doe@example.com'
-    username: 'john_doe'
+    user: 1  # Link to auth.user with pk=1
+    balls_purchased: []
 
 - model: main.customer
   pk: 2
   fields:
-    customer_email: 'jane.smith@example.com'
-    username: 'jane_smith'
+    user: 2  # Link to auth.user with pk=2
+    balls_purchased: []
 
 - model: main.customer
   pk: 3
   fields:
-    customer_email: 'mike.jones@example.com'
-    username: 'mike_jones'
+    user: 3  # Link to auth.user with pk=3
+    balls_purchased: []
 
 - model: main.customer
   pk: 4
   fields:
-    customer_email: 'lucy.green@example.com'
-    username: 'lucy_green'
+    user: 4  # Link to auth.user with pk=4
+    balls_purchased: []
 
 - model: main.customer
   pk: 5
   fields:
-    customer_email: 'tom.brown@example.com'
-    username: 'tom_brown'
+    user: 5  # Link to auth.user with pk=5
+    balls_purchased: []
 
 - model: main.customer
   pk: 6
   fields:
-    customer_email: 'susan.white@example.com'
-    username: 'susan_white'
+    user: 6  # Link to auth.user with pk=6
+    balls_purchased: []
 
 - model: main.customer
   pk: 7
   fields:
-    customer_email: 'george.davis@example.com'
-    username: 'george_davis'
+    user: 7  # Link to auth.user with pk=7
+    balls_purchased: []
 
 - model: main.customer
   pk: 8
   fields:
-    customer_email: 'paul.martin@example.com'
-    username: 'paul_martin'
+    user: 8  # Link to auth.user with pk=8
+    balls_purchased: []
 
 - model: main.customer
   pk: 9
   fields:
-    customer_email: 'lisa.wilson@example.com'
-    username: 'lisa_wilson'
+    user: 9  # Link to auth.user with pk=9
+    balls_purchased: []
 
 - model: main.customer
   pk: 10
   fields:
-    customer_email: 'maria.clark@example.com'
-    username: 'maria_clark'
+    user: 10  # Link to auth.user with pk=10
+    balls_purchased: []
+
+
 
 - model: main.purchase
   pk: 1

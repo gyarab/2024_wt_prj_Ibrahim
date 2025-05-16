@@ -1,69 +1,34 @@
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}Můj e-shop{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <style>
-        /* Custom navbar background */
         .navbar {
-            background-color: #343a40;  /* Dark theme for the navbar */
+            background-color: #343a40;
         }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: #f8f9fa;  /* Light color for brand */
-        }
-
-        .navbar-nav .nav-link {
+        .navbar-brand, .navbar-nav .nav-link {
             color: #f8f9fa !important;
-            font-size: 1.1rem;
         }
-
         .navbar-nav .nav-link:hover {
-            color: #f39c12 !important;  /* Hover color with gold */
+            color: #f39c12 !important;
         }
-
-        .navbar-toggler-icon {
-            background-color: #f39c12;  /* Hamburger icon color */
-        }
-
         .search-button {
-            background-color: #f39c12;  /* Search button color */
+            background-color: #f39c12;
             color: white;
         }
-
         .search-button:hover {
             background-color: #e67e22;
-        }
-
-        /* Container styling */
-        .container {
-            max-width: 1200px;
-            margin-top: 30px;
-        }
-
-        /* Custom footer style */
-        footer {
-            background-color: #343a40;
-            color: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        /* Card styling for better visuals */
-        .card {
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -72,7 +37,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">E-Shop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,25 +57,240 @@
                         <a class="nav-link" href="{% url 'ball_list' %}">Míče</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex me-3" role="search">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
                     <button class="btn search-button" type="submit">Search</button>
                 </form>
+
+                {% if user.is_authenticated %}
+                  <span class="text-light me-3">Logged in as {{ user.username }}</span>
+                  <a href="{% url 'account_logout' %}" class="btn btn-outline-light me-2">Logout</a>
+                {% else %}
+                  <button
+                    class="btn btn-outline-light me-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                  >
+                    Log In
+                  </button>
+                  <button
+                    class="btn btn-warning me-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signupModal"
+                  >
+                    Sign Up
+                  </button>
+                {% endif %}
+
+                <!-- Google Login Button -->
+                <a
+                  href="{% provider_login_url 'google' %}"
+                  class="btn btn-danger"
+                  title="Log in with Google"
+                >
+                  <i class="bi bi-google"></i> Google
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Main content area -->
-    <div class="container">
+    <div class="container mt-4">
         {% block content %}
         {% endblock %}
     </div>
 
     <!-- Footer Section -->
-    <footer>
+    <footer class="mt-5 text-center">
         <p>&copy; 2025 Můj e-shop - Všechna práva vyhrazena</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modals -->
+
+    <!-- Log In Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="loginEmail"
+                              required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="loginPassword"
+                              required
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      aria-labelledby="signupModalLabel"
+      aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email address</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="signupEmail"
+                              required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupUsername" class="form-label">Username</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="signupUsername"
+                              required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="signupPassword"
+                              required
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-warning">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for your login/signup forms -->
+    <script>
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const email = document.getElementById("signupEmail").value;
+          const username = document.getElementById("signupUsername").value;
+          const password = document.getElementById("signupPassword").value;
+
+          const response = await fetch("/signup/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({ email, username, password }),
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            alert(result.message);
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("signupModal")
+            );
+            modal.hide();
+          } else {
+            alert(result.message);
+          }
+        });
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const email = document.getElementById("loginEmail").value;
+          const password = document.getElementById("loginPassword").value;
+
+          const response = await fetch("/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            alert(result.message);
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("loginModal")
+            );
+            modal.hide();
+          } else {
+            alert(result.message);
+          }
+        });
+
+      // CSRF token helper
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
 </body>
 </html>

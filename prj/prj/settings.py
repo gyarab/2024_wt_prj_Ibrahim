@@ -25,21 +25,36 @@ SECRET_KEY = 'django-insecure-t+l(j2)dkh@+*f46zp=6ob*d+j0m!9+yu1ki2_d=_6)3h@tkel
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Add your domain(s) here for production
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Sites framework is required by allauth
+    'django.contrib.sites',
+
+    # Allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # Google OAuth2 provider
+
+    # Your apps
     'prj',
-    'main'
+    'main',
 ]
+
+# Sites framework setting
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Add this line for django-allauth:
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'prj.urls'
@@ -56,12 +74,12 @@ ROOT_URLCONF = 'prj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Add your templates folder here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request',  # Required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -123,3 +141,55 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Authentication backends - needed for django-allauth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default
+    'allauth.account.auth_backends.AuthenticationBackend',  # allauth backend
+]
+
+# Login redirects
+LOGIN_REDIRECT_URL = '/'  # Redirect after successful login
+LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
+
+
+# django-allauth configuration
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Allow login with username or email
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Can be 'mandatory', 'optional', or 'none'
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_SIGNUP_REDIRECT_URL = LOGIN_REDIRECT_URL
+ACCOUNT_LOGOUT_ON_GET = True  # Logs out immediately on GET /logout
+
+# SOCIALACCOUNT SETTINGS TO SKIP INTERMEDIATE STEP AS MUCH AS POSSIBLE
+SOCIALACCOUNT_AUTO_SIGNUP = True  # Automatically sign up social users if possible
+SOCIALACCOUNT_QUERY_EMAIL = True  # Get email from social account
+SOCIALACCOUNT_STORE_TOKENS = True  # Store access tokens if needed
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# This is for development only. In production, use a proper email backend.
+
+# Provider-specific settings for Google OAuth2
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        # If you want to specify your client id and secret here instead of admin:
+        # 'APP': {
+        #     'client_id': 'YOUR_GOOGLE_CLIENT_ID',
+        #     'secret': 'YOUR_GOOGLE_SECRET',
+        #     'key': ''
+        # }
+    }
+}
+
+
+# Add your Google Client ID and Secret via Django Admin under Social Applications (recommended)
+# Alternatively, you can uncomment and set here as above.
+
