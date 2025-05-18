@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # Sites framework is required by allauth
     'django.contrib.sites',
 
+    
+
     # Allauth apps
     'allauth',
     'allauth.account',
@@ -50,7 +52,7 @@ INSTALLED_APPS = [
 
     # Your apps
     'prj',
-    'main',
+     'main'
 ]
 
 # Sites framework setting
@@ -71,10 +73,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'prj.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Add your templates folder here
+        'DIRS': [BASE_DIR / 'main' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -97,6 +100,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+
     }
 }
 
@@ -104,20 +108,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+AUTH_PASSWORD_VALIDATORS = []
 
 
 # Internationalization
@@ -156,10 +147,9 @@ LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 # django-allauth configuration
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Allow login with username or email
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_LOGIN_METHODS = {'email', 'username'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'optional'  # Can be 'mandatory', 'optional', or 'none'
-ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_SIGNUP_REDIRECT_URL = LOGIN_REDIRECT_URL
 ACCOUNT_LOGOUT_ON_GET = True  # Logs out immediately on GET /logout
 

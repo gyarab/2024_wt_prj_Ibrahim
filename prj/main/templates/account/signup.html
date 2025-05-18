@@ -1,0 +1,34 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrace</title>
+  <style>
+    body { font-family: sans-serif; background: #f2f2f2; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .signup-box { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 350px; }
+    input { width: 100%; padding: 10px; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ccc; }
+    button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; }
+    .google-btn { background: #db4437; margin-top: 10px; }
+    .link { text-align: center; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <h2>Registrace</h2>
+    <form method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Registrovat se</button>
+    </form>
+
+    <form method="post" action="{% provider_login_url 'google' %}">
+      {% csrf_token %}
+      <button type="submit" class="google-btn">Registrovat se přes Google</button>
+    </form>
+
+    <div class="link">
+      <p>Už máš účet? <a href="{% url 'account_login' %}">Přihlas se</a></p>
+    </div>
+  </div>
+</body>
+</html>                                         
