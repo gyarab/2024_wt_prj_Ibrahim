@@ -7,46 +7,51 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Mikasa'
+    image_url: 'https://www.theclassroom.co/user/products/large/VB2150.jpg'
 
 - model: main.ball
   pk: 2
   fields:
     name: 'Wilson AVP Beach Volleyball'
-    price: 900  
+    price: 900
     weight: 230
     diameter: 22
     purpose: 'Beach'
     brand: 'Wilson'
+    image_url: 'https://m.media-amazon.com/images/I/81Qw7t87pGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 3
   fields:
     name: 'Molten V5M5000'
-    price: 1300  
+    price: 1300
     weight: 270
     diameter: 21
     purpose: 'Indoor'
     brand: 'Molten'
+    image_url: 'https://www.molten.co.jp/sports/en/products/volleyball/img/V5M5000_main.jpg'
 
 - model: main.ball
   pk: 4
   fields:
     name: 'Spalding King of the Beach Volleyball'
-    price: 1100 
+    price: 1100
     weight: 240
     diameter: 22
     purpose: 'Beach'
     brand: 'Spalding'
+    image_url: 'https://m.media-amazon.com/images/I/71n8QwMCKlL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 5
   fields:
     name: 'Tachikara SV5W Gold'
-    price: 1400  
+    price: 1400
     weight: 280
     diameter: 21
     purpose: 'Competition'
     brand: 'Tachikara'
+    image_url: 'https://m.media-amazon.com/images/I/71v6rRz7wGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 6
@@ -57,6 +62,7 @@
     diameter: 21
     purpose: 'Indoor'
     brand: 'Nike'
+    image_url: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/6e2b7e3d-9b1e-4e2b-8b7e-6d6e7e7e7e7e/vapor-volleyball-white-black-volt.jpg'
 
 - model: main.ball
   pk: 7
@@ -67,6 +73,7 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Adidas'
+    image_url: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/6e2b7e3d9b1e4e2b8b7e6d6e7e7e7e7e_9366/Volleyball_White_GK3476_01_standard.jpg'
 
 - model: main.ball
   pk: 8
@@ -77,6 +84,7 @@
     diameter: 21
     purpose: 'Training'
     brand: 'Molten'
+    image_url: 'https://www.molten.co.jp/sports/en/products/volleyball/img/V5M4000_main.jpg'
 
 - model: main.ball
   pk: 9
@@ -87,6 +95,7 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Mikasa'
+    image_url: 'https://www.mikasasports.co.jp/img/goods/L/V200W_main.jpg'
 
 - model: main.ball
   pk: 10
@@ -97,6 +106,7 @@
     diameter: 22
     purpose: 'Beach'
     brand: 'Wilson'
+    image_url: 'https://m.media-amazon.com/images/I/81Qw7t87pGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 11
@@ -107,6 +117,7 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Molten'
+    image_url: 'https://m.media-amazon.com/images/I/81n6wQ1kQwL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 12
@@ -117,6 +128,7 @@
     diameter: 22
     purpose: 'Indoor'
     brand: 'Spalding'
+    image_url: 'https://m.media-amazon.com/images/I/71w1kQ1kQwL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 13
@@ -127,6 +139,7 @@
     diameter: 21
     purpose: 'Training'
     brand: 'Tachikara'
+    image_url: 'https://m.media-amazon.com/images/I/71v6rRz7wGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 14
@@ -137,6 +150,7 @@
     diameter: 22
     purpose: 'Beach'
     brand: 'Under Armour'
+    image_url: 'https://m.media-amazon.com/images/I/71b1kQ1kQwL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 15
@@ -147,6 +161,7 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Mikasa'
+    image_url: 'https://www.mikasasports.co.jp/img/goods/L/MVA300_main.jpg'
 
 - model: main.ball
   pk: 16
@@ -157,6 +172,7 @@
     diameter: 22
     purpose: 'Beach'
     brand: 'Wilson'
+    image_url: 'https://m.media-amazon.com/images/I/81Qw7t87pGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 17
@@ -167,6 +183,7 @@
     diameter: 21
     purpose: 'Indoor'
     brand: 'Molten'
+    image_url: 'https://www.molten.co.jp/sports/en/products/volleyball/img/V5M5000_main.jpg'
 
 - model: main.ball
   pk: 18
@@ -177,6 +194,7 @@
     diameter: 22
     purpose: 'Beach'
     brand: 'Spalding'
+    image_url: 'https://m.media-amazon.com/images/I/71n8QwMCKlL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 19
@@ -187,6 +205,7 @@
     diameter: 21
     purpose: 'Indoor'
     brand: 'Nike'
+    image_url: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/6e2b7e3d-9b1e-4e2b-8b7e-6d6e7e7e7e7e/vapor-volleyball-white-black-volt.jpg'
 
 - model: main.ball
   pk: 20
@@ -197,6 +216,7 @@
     diameter: 22
     purpose: 'Training'
     brand: 'Adidas'
+    image_url: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/6e2b7e3d9b1e4e2b8b7e6d6e7e7e7e7e_9366/Volleyball_White_GK3476_01_standard.jpg'
 
 - model: main.ball
   pk: 21
@@ -207,6 +227,7 @@
     diameter: 21
     purpose: 'Indoor'
     brand: 'Molten'
+    image_url: 'https://www.molten.co.jp/sports/en/products/volleyball/img/V5M5000_main.jpg'
 
 - model: main.ball
   pk: 22
@@ -217,6 +238,7 @@
     diameter: 21
     purpose: 'Competition'
     brand: 'Mikasa'
+    image_url: 'https://www.mikasasports.co.jp/img/goods/L/VS200W_main.jpg'
 
 - model: main.ball
   pk: 23
@@ -227,6 +249,7 @@
     diameter: 21
     purpose: 'Training'
     brand: 'Spalding'
+    image_url: 'https://m.media-amazon.com/images/I/71w1kQ1kQwL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 24
@@ -237,8 +260,7 @@
     diameter: 22
     purpose: 'Beach'
     brand: 'Wilson'
-
-    
+    image_url: 'https://m.media-amazon.com/images/I/81Qw7t87pGL._AC_SL1500_.jpg'
 
 - model: main.ball
   pk: 25
@@ -249,257 +271,75 @@
     diameter: 21
     purpose: 'Indoor'
     brand: 'Adidas'
-
-# Users (auth_user table)
-- model: auth.user
-  pk: 1
-  fields:
-    username: 'john_doe'
-    email: 'john.doe@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword1'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 2
-  fields:
-    username: 'jane_smith'
-    email: 'jane.smith@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword2'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 3
-  fields:
-    username: 'mike_jones'
-    email: 'mike.jones@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword3'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 4
-  fields:
-    username: 'lucy_green'
-    email: 'lucy.green@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword4'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 5
-  fields:
-    username: 'tom_brown'
-    email: 'tom.brown@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword5'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 6
-  fields:
-    username: 'susan_white'
-    email: 'susan.white@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword6'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 7
-  fields:
-    username: 'george_davis'
-    email: 'george.davis@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword7'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 8
-  fields:
-    username: 'paul_martin'
-    email: 'paul.martin@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword8'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 9
-  fields:
-    username: 'lisa_wilson'
-    email: 'lisa.wilson@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword9'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
-
-- model: auth.user
-  pk: 10
-  fields:
-    username: 'maria_clark'
-    email: 'maria.clark@example.com'
-    password: 'pbkdf2_sha256$260000$hashedpassword10'  # Replace with hashed password
-    is_superuser: false
-    is_staff: false
-    is_active: true
+    image_url: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/6e2b7e3d9b1e4e2b8b7e6d6e7e7e7e7e_9366/Volleyball_White_GK3476_01_standard.jpg'
 
 # Customers (main_customer table)
 - model: main.customer
   pk: 1
   fields:
-    user: 1  # Link to auth.user with pk=1
+    customer_email: "customer1@email.cz"
+    username: "customer1"
     balls_purchased: []
 
 - model: main.customer
   pk: 2
   fields:
-    user: 2  # Link to auth.user with pk=2
+    customer_email: "customer2@email.cz"
+    username: "customer2"
     balls_purchased: []
 
 - model: main.customer
   pk: 3
   fields:
-    user: 3  # Link to auth.user with pk=3
+    customer_email: "customer3@email.cz"
+    username: "customer3"
     balls_purchased: []
 
 - model: main.customer
   pk: 4
   fields:
-    user: 4  # Link to auth.user with pk=4
+    customer_email: "customer4@email.cz"
+    username: "customer4"
     balls_purchased: []
 
 - model: main.customer
   pk: 5
   fields:
-    user: 5  # Link to auth.user with pk=5
+    customer_email: "customer5@email.cz"
+    username: "customer5"
     balls_purchased: []
 
 - model: main.customer
   pk: 6
   fields:
-    user: 6  # Link to auth.user with pk=6
+    customer_email: "customer6@email.cz"
+    username: "customer6"
     balls_purchased: []
 
 - model: main.customer
   pk: 7
   fields:
-    user: 7  # Link to auth.user with pk=7
+    customer_email: "customer7@email.cz"
+    username: "customer7"
     balls_purchased: []
 
 - model: main.customer
   pk: 8
   fields:
-    user: 8  # Link to auth.user with pk=8
+    customer_email: "customer8@email.cz"
+    username: "customer8"
     balls_purchased: []
 
 - model: main.customer
   pk: 9
   fields:
-    user: 9  # Link to auth.user with pk=9
+    customer_email: "customer9@email.cz"
+    username: "customer9"
     balls_purchased: []
 
 - model: main.customer
   pk: 10
   fields:
-    user: 10  # Link to auth.user with pk=10
+    customer_email: "customer10@email.cz"
+    username: "customer10"
     balls_purchased: []
-
-
-
-- model: main.purchase
-  pk: 1
-  fields:
-    customer: 1
-    ball: 1
-    purchase_date: '2025-03-01'
-    quantity: 2
-    total_price: 2600
-
-- model: main.purchase
-  pk: 2
-  fields:
-    customer: 2
-    ball: 2
-    purchase_date: '2025-03-02'
-    quantity: 1
-    total_price: 1200
-
-- model: main.purchase
-  pk: 3
-  fields:
-    customer: 3
-    ball: 3
-    purchase_date: '2025-03-03'
-    quantity: 3
-    total_price: 3000
-
-- model: main.purchase
-  pk: 4
-  fields:
-    customer: 4
-    ball: 4
-    purchase_date: '2025-03-04'
-    quantity: 1
-    total_price: 2200
-
-- model: main.purchase
-  pk: 5
-  fields:
-    customer: 5
-    ball: 5
-    purchase_date: '2025-03-05'
-    quantity: 2
-    total_price: 1800
-
-- model: main.purchase
-  pk: 6
-  fields:
-    customer: 6
-    ball: 6
-    purchase_date: '2025-03-06'
-    quantity: 4
-    total_price: 5200
-
-- model: main.purchase
-  pk: 7
-  fields:
-    customer: 7
-    ball: 7
-    purchase_date: '2025-03-07'
-    quantity: 1
-    total_price: 1200
-
-- model: main.purchase
-  pk: 8
-  fields:
-    customer: 8
-    ball: 8
-    purchase_date: '2025-03-08'
-    quantity: 3
-    total_price: 3750
-
-- model: main.purchase
-  pk: 9
-  fields:
-    customer: 9
-    ball: 9
-    purchase_date: '2025-03-09'
-    quantity: 2
-    total_price: 2300
-
-- model: main.purchase
-  pk: 10
-  fields:
-    customer: 10
-    ball: 10
-    purchase_date: '2025-03-10'
-    quantity: 1
-    total_price: 950

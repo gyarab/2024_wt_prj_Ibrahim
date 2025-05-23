@@ -4,11 +4,18 @@
 
 {% block content %}
 <h1>{{ ball.name }}</h1>
-<p>Cena: {{ ball.price }} Kč</p>
+<p>Cena: <strong>{{ ball.price }} Kč</strong></p>
 <p>Hmotnost: {{ ball.weight }} g</p>
 <p>Průměr: {{ ball.diameter }} mm</p>
 <p>Využití: {{ ball.purpose }}</p>
 <p>Značka: {{ ball.brand }}</p>
-<a href="{% url 'ball_list' %}">Zpět na seznam</a>
 
+<form method="post" action="{% url 'purchase_ball' ball.pk %}">
+  {% csrf_token %}
+  <button type="submit" style="background:#28a745;color:white;padding:10px 20px;border:none;border-radius:5px;font-size:16px;">
+    Koupit za {{ ball.price }} Kč
+  </button>
+</form>
+
+<a href="{% url 'ball_list' %}">Zpět na seznam</a>
 {% endblock %}
