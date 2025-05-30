@@ -187,8 +187,6 @@
 
 - model: main.ball
   pk: 18
-  fields:
-    name: 'Spalding King of the Beach'
     price: 1100
     weight: 240
     diameter: 22
