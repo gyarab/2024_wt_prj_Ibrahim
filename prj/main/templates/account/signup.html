@@ -1,4 +1,3 @@
-{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +20,7 @@
       <button type="submit">Registrovat se</button>
     </form>
 
-    <form method="post" action="{% provider_login_url 'google' %}">
-      {% csrf_token %}
-      <button type="submit" class="google-btn">Registrovat se přes Google</button>
-    </form>
+
 
     <div class="link">
       <p>Už máš účet? <a href="{% url 'account_login' %}">Přihlas se</a></p>

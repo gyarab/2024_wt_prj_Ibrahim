@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-t+l(j2)dkh@+*f46zp=6ob*d+j0m!9+yu1ki2_d=_6)3h@tkel
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']  # Add your domain(s) here for production
-
+ALLOWED_HOSTS = ['*'] 
 
 # Application definition
 
@@ -48,7 +47,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',  # Google OAuth2 provider
 
     # Your apps
     'prj',
@@ -161,6 +159,22 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # This is for development only. In production, use a proper email backend.
 
 # Provider-specific settings for Google OAuth2
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'SCOPE': [
+#             'profile',
+#             'email',
+#         ],
+#         'AUTH_PARAMS': {
+#             'access_type': 'online',
+#         },
+#     }
+# }
+
+
+# Add your Google Client ID and Secret via Django Admin under Social Applications (recommended)
+# Alternatively, you can uncomment and set here as above.
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -170,16 +184,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         },
-        # If you want to specify your client id and secret here instead of admin:
-        # 'APP': {
-        #     'client_id': 'YOUR_GOOGLE_CLIENT_ID',
-        #     'secret': 'YOUR_GOOGLE_SECRET',
-        #     'key': ''
-        # }
     }
 }
-
-
-# Add your Google Client ID and Secret via Django Admin under Social Applications (recommended)
-# Alternatively, you can uncomment and set here as above.
 
